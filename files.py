@@ -1,7 +1,7 @@
 def save_line_to_file(filepath: str, line: str) -> None:
     """Saves line to file."""
-    with open(filepath, 'a', encoding='utf-8') as essay_content:
-        essay_content.write(line)
+    with open(filepath, 'a', encoding='utf-8') as file_object:
+        file_object.write(line)
 
 
 def main() -> None:
@@ -18,8 +18,8 @@ def main() -> None:
     """
     length_of_strings = 0
     number_of_words = 0
-    with open('referat.txt', 'r', encoding='utf-8') as file_content:
-        for line in file_content:
+    with open('referat.txt', 'r', encoding='utf-8') as file_object:
+        for line in file_object:
             length_of_strings += len(line)
             number_of_words += len(line.split(' '))
             save_line_to_file('referat2.txt', line.replace('.', '!'))
