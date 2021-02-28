@@ -1,7 +1,11 @@
-def save_line_to_file(filepath: str, line: str) -> None:
-    """Saves line to file."""
-    with open(filepath, 'a', encoding='utf-8') as file_object:
-        file_object.write(line)
+def save_file_content_to(filepath: str, file_content: str) -> None:
+    """Saves content to file.
+
+    @param filepath:  path to the saved file;
+    @param file_content: information to be saved to file.
+    """
+    with open(filepath, 'w', encoding='utf-8') as file_object:
+        file_object.write(file_content)
 
 
 def main() -> None:
@@ -16,13 +20,14 @@ def main() -> None:
     4. Замените точки в тексте на восклицательные знаки
     5. Сохраните результат в файл referat2.txt
     """
-    length_of_strings = 0
-    number_of_words = 0
     with open('referat.txt', 'r', encoding='utf-8') as file_object:
-        for line in file_object:
-            length_of_strings += len(line)
-            number_of_words += len(line.split(' '))
-            save_line_to_file('referat2.txt', line.replace('.', '!'))
+        file_content = file_object.read()
+        number_of_characters = len(file_content)
+        number_of_words = len(file_content.split())
+        save_file_content_to('referat2.txt', file_content.replace('.', '!'))
+
+    print(f'Длина текста - {number_of_characters} символов')
+    print(f'Количество слов - {number_of_words}')
 
 
 if __name__ == '__main__':
