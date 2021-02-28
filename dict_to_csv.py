@@ -8,8 +8,7 @@ def save_users_to_csv_file(users: List[Dict[str, str]]) -> None:
         fields = ['name', 'age', 'job']
         writer = csv.DictWriter(csv_file, fields, delimiter=';')
         writer.writeheader()
-        for user in users:
-            writer.writerow(user)
+        writer.writerows(users)
 
 
 def main():
