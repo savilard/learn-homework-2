@@ -21,11 +21,11 @@ def print_days() -> None:
     print('30 дней назад - {0}'.format(convert_datetime_to_str(calculate_date_days_ago(number_of_days_ago=30))))
 
 
-def convert_string_to_datetime(date_string):
+def convert_string_to_datetime(date_string, string_formatting_pattern):
     """Converts string to datetime."""
-    return datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
+    return datetime.strptime(date_string, string_formatting_pattern)
 
 
 if __name__ == '__main__':
     print_days()
-    print(convert_string_to_datetime('01/01/20 12:10:03.234567'))
+    print(convert_string_to_datetime('01/01/20 12:10:03.234567', '%d/%m/%y %H:%M:%S.%f'))
