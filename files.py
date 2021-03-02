@@ -24,7 +24,7 @@ def main() -> None:
         file_content = file_object.read()
         number_of_characters = len(file_content)
         number_of_words = len(file_content.split())
-        save_file_content_to('referat2.txt', file_content.replace('.', '!'))
+    save_file_content_to('referat2.txt', file_content.replace('.', '!'))
 
     print(f'Длина текста - {number_of_characters} символов')
     print(f'Количество слов - {number_of_words}')
